@@ -1,1 +1,1 @@
-# shortest-path-graph
+# implementation of dijkstra, floyd-warshall algorithms
