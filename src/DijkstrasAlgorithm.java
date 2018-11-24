@@ -102,17 +102,17 @@ class DijkstrasAlgorithm {
     // A utility function to print
     // the constructed distances
     // array and shortest paths
-    private void printSolution(int startVertex, int[] distances, int[] parents) {
-        int nVertices = distances.length;
-        System.out.print("Vertex\t Distance\t\tPath");
+    // private void printSolution(int startVertex, int[] distances, int[] parents) {
+    // int nVertices = distances.length;
+    // System.out.print("Vertex\t Distance\t\tPath");
 
-        for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
-            System.out.print("\n" + startVertex + " -> ");
-            System.out.print(vertexIndex + " \t\t ");
-            System.out.print(distances[vertexIndex] + "\t\t");
-            printPath(vertexIndex, parents);
-        }
-    }
+    // for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
+    // System.out.print("\n" + startVertex + " -> ");
+    // System.out.print(vertexIndex + " \t\t ");
+    // System.out.print(distances[vertexIndex] + "\t\t");
+    // printPath(vertexIndex, parents);
+    // }
+    // }
 
     private void printLine(int startVertex, int[] distances, int[] parents) {
         int nVertices = distances.length;
@@ -128,16 +128,16 @@ class DijkstrasAlgorithm {
     // Function to print shortest path
     // from source to currentVertex
     // using parents array
-    private void printPath(int currentVertex, int[] parents) {
+    // private void printPath(int currentVertex, int[] parents) {
 
-        // Base case : Source node has
-        // been processed
-        if (currentVertex == NO_PARENT) {
-            return;
-        }
-        printPath(parents[currentVertex], parents);
-        System.out.print(currentVertex + " ");
-    }
+    // // Base case : Source node has
+    // // been processed
+    // if (currentVertex == NO_PARENT) {
+    // return;
+    // }
+    // printPath(parents[currentVertex], parents);
+    // System.out.print(currentVertex + " ");
+    // }
 
     // // Driver Code
     // public static void main(String[] args) {
