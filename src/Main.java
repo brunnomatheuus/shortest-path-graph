@@ -16,12 +16,16 @@ class Main {
                 { INF, INF, INF, 1, INF, INF, INF, 0, 3 }, // LINHA 7
                 { INF, INF, 5, INF, INF, INF, 2, 3, 0 } }; // LINHA 8
 
+        long tinicial1 = System.currentTimeMillis();
         FloydWarshallAlgorithm f = new FloydWarshallAlgorithm();
         f.floydWarshall(graph);
+        long tfinal1 = System.currentTimeMillis();
 
+        long tinicial2 = System.currentTimeMillis();
         DijkstrasAlgorithm d = new DijkstrasAlgorithm();
         d.dijkstraAllPairs(graph);
-
-        // TODO - CALCULAR OS TEMPOS GASTOS POR CADA ALGORITMO PARA COMPARAÇÃO
+        long tfinal2 = System.currentTimeMillis();
+        System.out.println("Dijkstra acabou. Tempo: " + (tfinal1 - tinicial1) + "ms");
+        System.out.println("Floyd-Warshall acabou. Tempo: " + (tfinal2 - tinicial2 + "ms"));
     }
 }
