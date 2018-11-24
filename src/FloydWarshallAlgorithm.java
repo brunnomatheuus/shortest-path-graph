@@ -50,7 +50,8 @@ class FloydWarshallAlgorithm {
     }
 
     void printSolution(int dist[][], int V) {
-        System.out.println("A seguinte matrix exibe o caminho mais curto e distâncias entre cada par de vértices:");
+        System.out.println(
+                "Floyd-Warshall: A matrix abaixo exibe o caminho mais curto e as distâncias entre cada par de vértices:");
         System.out.print("X\t");
         for (int i = 0; i < V; ++i) {
             System.out.print(i + "\t");
@@ -66,26 +67,27 @@ class FloydWarshallAlgorithm {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     // Driver program to test above function
-    public static void main(String[] args) {
-        int graph[][] = { // DEFINE O GRAFO
-                { 0, 2, INF, INF, 3, INF, INF, INF, INF }, // LINHA 0
-                { 2, 0, 4, 1, INF, INF, INF, INF, INF }, // LINHA 1
-                { INF, 4, 0, INF, INF, INF, INF, INF, 5 }, // LINHA 2
-                { INF, 1, INF, 0, INF, 3, INF, 1, INF }, // LINHA 3
-                { 3, INF, INF, INF, 0, 2, INF, INF, INF }, // LINHA 4
-                { INF, INF, INF, 3, 2, 0, 1, INF, INF }, // LINHA 5
-                { INF, INF, INF, INF, INF, 1, 0, INF, 2 }, // LINHA 6
-                { INF, INF, INF, 1, INF, INF, INF, 0, 3 }, // LINHA 7
-                { INF, INF, 5, INF, INF, INF, 2, 3, 0 } }; // LINHA 8
+    // public static void main(String[] args) {
+    // int graph[][] = { // DEFINE O GRAFO
+    // { 0, 2, INF, INF, 3, INF, INF, INF, INF }, // LINHA 0
+    // { 2, 0, 4, 1, INF, INF, INF, INF, INF }, // LINHA 1
+    // { INF, 4, 0, INF, INF, INF, INF, INF, 5 }, // LINHA 2
+    // { INF, 1, INF, 0, INF, 3, INF, 1, INF }, // LINHA 3
+    // { 3, INF, INF, INF, 0, 2, INF, INF, INF }, // LINHA 4
+    // { INF, INF, INF, 3, 2, 0, 1, INF, INF }, // LINHA 5
+    // { INF, INF, INF, INF, INF, 1, 0, INF, 2 }, // LINHA 6
+    // { INF, INF, INF, 1, INF, INF, INF, 0, 3 }, // LINHA 7
+    // { INF, INF, 5, INF, INF, INF, 2, 3, 0 } }; // LINHA 8
 
-        FloydWarshallAlgorithm a = new FloydWarshallAlgorithm();
+    // FloydWarshallAlgorithm a = new FloydWarshallAlgorithm();
 
-        // Print the solution
-        a.floydWarshall(graph);
-    }
+    // // Print the solution
+    // a.floydWarshall(graph);
+    // }
 }
 
 // Contributed by Aakash Hasija

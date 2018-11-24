@@ -9,12 +9,25 @@ class DijkstrasAlgorithm {
     private static final int NO_PARENT = -1;
     final static int INF = Integer.MAX_VALUE;
 
+    public void dijkstraAllPairs(int[][] graph) {
+        System.out.println(
+                "Dijkstra: A matrix abaixo exibe o caminho mais curto e as distâncias entre cada par de vértices:");
+        System.out.print("X\t");
+        for (int i = 0; i < graph[0].length; ++i) {
+            System.out.print(i + "\t");
+        }
+        System.out.println();
+        for (int i = 0; i < graph[0].length; i++) {
+            dijkstra(graph, i);
+        }
+    }
+
     // Function that implements Dijkstra's
     // single source shortest path
     // algorithm for a graph represented
     // using adjacency matrix
     // representation
-    private static void dijkstra(int[][] adjacencyMatrix, int startVertex) {
+    public void dijkstra(int[][] adjacencyMatrix, int startVertex) {
         int nVertices = adjacencyMatrix[0].length;
 
         // shortestDistances[i] will hold the
@@ -74,37 +87,48 @@ class DijkstrasAlgorithm {
             for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
                 int edgeDistance = adjacencyMatrix[nearestVertex][vertexIndex];
 
-                if (edgeDistance > 0 && ((shortestDistance + edgeDistance) < shortestDistances[vertexIndex])) {
+                if (edgeDistance != Integer.MAX_VALUE && edgeDistance > 0
+                        && ((shortestDistance + edgeDistance) < shortestDistances[vertexIndex])) {
                     parents[vertexIndex] = nearestVertex;
                     shortestDistances[vertexIndex] = shortestDistance + edgeDistance;
                 }
             }
         }
 
-        printSolution(startVertex, shortestDistances, parents);
+        // printSolution(startVertex, shortestDistances, parents);
+        printLine(startVertex, shortestDistances, parents);
     }
 
     // A utility function to print
     // the constructed distances
     // array and shortest paths
-    private static void printSolution(int startVertex, int[] distances, int[] parents) {
+    private void printSolution(int startVertex, int[] distances, int[] parents) {
         int nVertices = distances.length;
-        System.out.print("Vertex\t Distance\tPath");
+        System.out.print("Vertex\t Distance\t\tPath");
 
         for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
-            if (vertexIndex != startVertex) {
-                System.out.print("\n" + startVertex + " -> ");
-                System.out.print(vertexIndex + " \t\t ");
-                System.out.print(distances[vertexIndex] + "\t\t");
-                printPath(vertexIndex, parents);
-            }
+            System.out.print("\n" + startVertex + " -> ");
+            System.out.print(vertexIndex + " \t\t ");
+            System.out.print(distances[vertexIndex] + "\t\t");
+            printPath(vertexIndex, parents);
         }
+    }
+
+    private void printLine(int startVertex, int[] distances, int[] parents) {
+        int nVertices = distances.length;
+        // System.out.print("Vertex\t Distance\t\tPath");
+
+        System.out.print(startVertex);
+        for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
+            System.out.print("\t" + distances[vertexIndex]);
+        }
+        System.out.println();
     }
 
     // Function to print shortest path
     // from source to currentVertex
     // using parents array
-    private static void printPath(int currentVertex, int[] parents) {
+    private void printPath(int currentVertex, int[] parents) {
 
         // Base case : Source node has
         // been processed
@@ -115,21 +139,22 @@ class DijkstrasAlgorithm {
         System.out.print(currentVertex + " ");
     }
 
-    // Driver Code
-    public static void main(String[] args) {
-        int[][] adjacencyMatrix = { // DEFINE A MATRIX
-                { 0, 4, 0, 0, 0, 0, 0, 8, 0 }, // LINHA 0
-                { 4, 0, 8, 0, 0, 0, 0, 11, 0 }, // LINHA 1
-                { 0, 8, 0, 7, 0, 4, 0, 0, 2 }, // LINHA 2
-                { 0, 0, 7, 0, 9, 14, 0, 0, 0 }, // LINHA 3
-                { 0, 0, 0, 9, 0, 10, 0, 0, 0 }, // LINHA 4
-                { 0, 0, 4, 0, 10, 0, 2, 0, 0 }, // LINHA 5
-                { 0, 0, 0, 14, 0, 2, 0, 1, 6 }, // LINHA 6
-                { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, // LINHA 7
-                { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };// LINHA 8
+    // // Driver Code
+    // public static void main(String[] args) {
+    // int graph[][] = { // DEFINE O GRAFO
+    // { 0, 2, INF, INF, 3, INF, INF, INF, INF }, // LINHA 0
+    // { 2, 0, 4, 1, INF, INF, INF, INF, INF }, // LINHA 1
+    // { INF, 4, 0, INF, INF, INF, INF, INF, 5 }, // LINHA 2
+    // { INF, 1, INF, 0, INF, 3, INF, 1, INF }, // LINHA 3
+    // { 3, INF, INF, INF, 0, 2, INF, INF, INF }, // LINHA 4
+    // { INF, INF, INF, 3, 2, 0, 1, INF, INF }, // LINHA 5
+    // { INF, INF, INF, INF, INF, 1, 0, INF, 2 }, // LINHA 6
+    // { INF, INF, INF, 1, INF, INF, INF, 0, 3 }, // LINHA 7
+    // { INF, INF, 5, INF, INF, INF, 2, 3, 0 } }; // LINHA 8
 
-        dijkstra(adjacencyMatrix, 1);
-    }
+    // DijkstrasAlgorithm d = new DijkstrasAlgorithm();
+    // d.dijkstra(graph, 1);
+    // }
 }
 
 // This code is contributed by Harikrishnan Rajan
