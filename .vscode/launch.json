@@ -2,6 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FloydWarshallAlgorithm",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "FloydWarshallAlgorithm",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DijkstrasAlgorithm",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "DijkstrasAlgorithm",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShortestPath",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "ShortestPath",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DijkstraGeeks",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "DijkstraGeeks",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MainJFrame",
             "request": "launch",
             "cwd": "${workspaceFolder}",
