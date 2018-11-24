@@ -2,6 +2,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FloydWarshallAlgorithm9x9",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "FloydWarshallAlgorithm9x9",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FloydWarshallAlgorithm",
             "request": "launch",
             "cwd": "${workspaceFolder}",
