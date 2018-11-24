@@ -2,28 +2,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Main",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "Main",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - FloydWarshallAlgorithm9x9",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "FloydWarshallAlgorithm9x9",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
             "name": "CodeLens (Launch) - FloydWarshallAlgorithm",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -46,34 +24,12 @@
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ShortestPath",
+            "name": "Principal",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "ShortestPath",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - DijkstraGeeks",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "DijkstraGeeks",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - MainJFrame",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "MainJFrame",
+            "mainClass": "Main",
             "args": "",
             "projectName": "shortest-path-graph"
         }
