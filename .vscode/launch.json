@@ -2,6 +2,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Debug (Principal)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Main",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "Principal",
             "request": "launch",
             "cwd": "${workspaceFolder}",
