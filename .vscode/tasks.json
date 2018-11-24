@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "BuildMain",
+            "type": "shell",
+            "command": "javac -encoding utf8 src/FloydWarshallAlgorithm.java src/DijkstrasAlgorithm.java src/Main.java -d bin/",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
