@@ -1,5 +1,6 @@
 {
     "configurations": [
+        
         {
             "type": "java",
             "name": "Debug (Principal)",
@@ -8,7 +9,8 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "Main",
-            "args": ""
+            "args": "",
+            "code-runner.runInTerminal": true
         },
         {
             "type": "java",
@@ -19,7 +21,8 @@
             "stopOnEntry": false,
             "mainClass": "Main",
             "args": "",
-            "projectName": "shortest-path-graph"
+            "projectName": "shortest-path-graph",
+            "code-runner.runInTerminal": true
         }
     ]
 }
