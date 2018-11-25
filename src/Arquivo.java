@@ -11,13 +11,14 @@ class Arquivo {
      * Acrescenta a string em dados no arquivo desejado
      * 
      * @param arquivo
+     * @param limpar
      * @param dados
      * @return
      */
-    public Boolean salvar(String arquivo, String dados) {
+    public Boolean salvar(String arquivo, Boolean limpar, String dados) {
         PrintWriter out;
         try {
-            out = new PrintWriter(new FileOutputStream(new File(arquivo), true));
+            out = new PrintWriter(new FileOutputStream(new File(arquivo), !limpar));
             out.println(dados);
             out.close();
             return true;

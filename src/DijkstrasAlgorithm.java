@@ -9,8 +9,9 @@ class DijkstrasAlgorithm {
      * 
      * @param graph A matriz de adjacencias
      * @param print Booleano para indicar se deseja imprimir o resultado
+     * @return Retorna diferente de 0 quando o grafo eh invalido
      */
-    public void dijkstraAllPairs(int[][] graph, Boolean print) {
+    public int dijkstraAllPairs(int[][] graph, Boolean print) {
         if (print) {
             System.out.println(
                     "Dijkstra: A matrix abaixo exibe o caminho mais curto e as distâncias entre cada par de vértices:");
@@ -21,10 +22,13 @@ class DijkstrasAlgorithm {
             System.out.println();
         }
         for (int i = 0; i < graph[0].length; i++) {
-            dijkstra(graph, i, print);
+            if (dijkstra(graph, i, print) != 0)
+                return 1;
         }
         if (print)
             System.out.println();
+
+        return 0;
     }
 
     /**
@@ -33,8 +37,9 @@ class DijkstrasAlgorithm {
      * @param matriz    A matriz de adjacencias
      * @param srcVertex Vertice de origem para o calculo do caminho mais curto
      * @param print     Booleano para indicar se deseja imprimir o resultado
+     * @return Retorna 0 em caso normal e 2 quando o grafo eh desconexo
      */
-    public void dijkstra(int[][] matriz, int srcVertex, Boolean print) {
+    public int dijkstra(int[][] matriz, int srcVertex, Boolean print) {
         int nVertices = matriz[0].length;
         int[] shortestDistances = new int[nVertices];
         boolean[] added = new boolean[nVertices];
@@ -56,6 +61,9 @@ class DijkstrasAlgorithm {
                     }
                 }
             }
+            if (nearestVertex == -1)
+                return 2;
+
             added[nearestVertex] = true;
             for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
                 int edgeDistance = matriz[nearestVertex][vertexIndex];
@@ -68,6 +76,7 @@ class DijkstrasAlgorithm {
         }
         if (print)
             printLine(srcVertex, shortestDistances);
+        return 0;
     }
 
     /**
