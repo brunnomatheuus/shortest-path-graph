@@ -20,22 +20,22 @@ class Calculos {
         long tfinal0 = System.nanoTime();
 
         // Usa Dijkstra para calcular os caminhos mais curtos
-        long tinicial1 = System.currentTimeMillis();
         DijkstrasAlgorithm d = new DijkstrasAlgorithm();
+        long tinicial1 = System.nanoTime();
         int resultado = d.dijkstraAllPairs(graph, ver);
-        long tfinal1 = System.currentTimeMillis();
+        long tfinal1 = System.nanoTime();
         if (resultado != 0) {
             matriz.printMatrix(graph);
             return false;
         }
 
         // Usa Floyd-Warshall para calcular os caminhos mais curtos
-        long tinicial2 = System.currentTimeMillis();
         FloydWarshallAlgorithm f = new FloydWarshallAlgorithm();
+        long tinicial2 = System.nanoTime();
         f.floydWarshall(graph, ver);
-        long tfinal2 = System.currentTimeMillis();
+        long tfinal2 = System.nanoTime();
 
-        // Acrescenta o resultado no arquivo.
+        // Acrescenta o resultado no arquivo. Com tempos em nano segundos.
         // Leiaute: dimensão; tempo de geração; tempo Dijkstra; tempo Floyd-Warshall
         Arquivo arquivo = new Arquivo();
         return arquivo.salvar(caminho, limpar, dimensao + ";" + (tfinal0 - tinicial0) + ";" + (tfinal1 - tinicial1)
