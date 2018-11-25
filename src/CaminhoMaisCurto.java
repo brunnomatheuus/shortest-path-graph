@@ -14,14 +14,14 @@ class CaminhoMaisCurto {
      */
     public static void main(String[] args) {
         Calculos calculos = new Calculos();
-        if (calculos.calcUnico("/home/dionisio/Documentos/UFRN/grafos.txt", false, DIMENSAO, false))
+        if (calculos.calcUnico("./results/grafosunico.txt", false, DIMENSAO, false))
             System.out.println("***FIM ÚNICO***");
         else
             System.out.println("***ERRO ÚNICO***");
 
         // Executar algoritmos com matriz de dimensão 10 até 100, iterando 100 vezes em
         // cada e salvando em arquivo novo
-        if (calculos.calcLoop("/home/dionisio/Documentos/UFRN/grafos2.txt", true, 10, 100, 100, false))
+        if (calculos.calcLoop("./results/grafosloop.txt", true, 10, 100, 100, false))
             System.out.println("***FIM LOOP***");
         else
             System.out.println("***ERRO LOOP***");
