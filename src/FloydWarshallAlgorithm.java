@@ -9,8 +9,9 @@ class FloydWarshallAlgorithm {
      * curto como resultado
      * 
      * @param graph A matriz de adjacencias
+     * @param print Booleano para indicar se deseja imprimir o resultado
      */
-    void floydWarshall(int graph[][]) {
+    void floydWarshall(int graph[][], Boolean print) {
         final int V = graph[0].length;
         int dist[][] = new int[V][V];
         int i, j, k;
@@ -28,8 +29,8 @@ class FloydWarshallAlgorithm {
                 }
             }
         }
-
-        printSolution(dist, V);
+        if (print)
+            printSolution(dist, V);
     }
 
     /**

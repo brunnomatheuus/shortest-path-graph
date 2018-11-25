@@ -8,19 +8,23 @@ class DijkstrasAlgorithm {
      * Calcula a distancia entre todos os pares de uma matriz de adjacencias
      * 
      * @param graph A matriz de adjacencias
+     * @param print Booleano para indicar se deseja imprimir o resultado
      */
-    public void dijkstraAllPairs(int[][] graph) {
-        System.out.println(
-                "Dijkstra: A matrix abaixo exibe o caminho mais curto e as distâncias entre cada par de vértices:");
-        System.out.print("X\t");
-        for (int i = 0; i < graph[0].length; ++i) {
-            System.out.print(i + "\t");
+    public void dijkstraAllPairs(int[][] graph, Boolean print) {
+        if (print) {
+            System.out.println(
+                    "Dijkstra: A matrix abaixo exibe o caminho mais curto e as distâncias entre cada par de vértices:");
+            System.out.print("X\t");
+            for (int i = 0; i < graph[0].length; ++i) {
+                System.out.print(i + "\t");
+            }
+            System.out.println();
         }
-        System.out.println();
         for (int i = 0; i < graph[0].length; i++) {
-            dijkstra(graph, i);
+            dijkstra(graph, i, print);
         }
-        System.out.println();
+        if (print)
+            System.out.println();
     }
 
     /**
@@ -28,8 +32,9 @@ class DijkstrasAlgorithm {
      * 
      * @param matriz    A matriz de adjacencias
      * @param srcVertex Vertice de origem para o calculo do caminho mais curto
+     * @param print     Booleano para indicar se deseja imprimir o resultado
      */
-    public void dijkstra(int[][] matriz, int srcVertex) {
+    public void dijkstra(int[][] matriz, int srcVertex, Boolean print) {
         int nVertices = matriz[0].length;
         int[] shortestDistances = new int[nVertices];
         boolean[] added = new boolean[nVertices];
@@ -61,8 +66,8 @@ class DijkstrasAlgorithm {
                 }
             }
         }
-
-        printLine(srcVertex, shortestDistances);
+        if (print)
+            printLine(srcVertex, shortestDistances);
     }
 
     /**
