@@ -1,6 +1,16 @@
 {
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DijkstrasAlgorithm",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "DijkstrasAlgorithm",
+            "args": "",
+            "projectName": "shortest-path-graph"
+        },
         {
             "type": "java",
             "name": "Debug (Principal)",
