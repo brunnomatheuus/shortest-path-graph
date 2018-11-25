@@ -19,6 +19,8 @@ class CaminhoMaisCurto {
         else
             System.out.println("***ERRO ÚNICO***");
 
+        // Executar algoritmos com matriz de dimensão 10 até 100, iterando 100 vezes em
+        // cada e salvando em arquivo novo
         if (calculos.calcLoop("/home/dionisio/Documentos/UFRN/grafos2.txt", true, 10, 100, 100, false))
             System.out.println("***FIM LOOP***");
         else

@@ -2,34 +2,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ProgressDemo",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "ProgressDemo",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - DijkstrasAlgorithm",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "DijkstrasAlgorithm",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        },
-        {
-            "type": "java",
             "name": "Debug (Principal)",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "Main",
+            "mainClass": "CaminhoMaisCurto",
             "args": ""
         },
         {
@@ -39,20 +17,9 @@
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "stopOnEntry": false,
-            "mainClass": "Main",
+            "mainClass": "CaminhoMaisCurto",
             "args": "",
             "projectName": "shortest-path-graph"
         },
-        {
-            "type": "java",
-            "name": "Teste",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
-            "stopOnEntry": false,
-            "mainClass": "ProgressDemo",
-            "args": "",
-            "projectName": "shortest-path-graph"
-        }
     ]
 }
