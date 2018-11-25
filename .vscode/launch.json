@@ -9,8 +9,7 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "Main",
-            "args": "",
-            "code-runner.runInTerminal": true
+            "args": ""
         },
         {
             "type": "java",
@@ -21,8 +20,7 @@
             "stopOnEntry": false,
             "mainClass": "Main",
             "args": "",
-            "projectName": "shortest-path-graph",
-            "code-runner.runInTerminal": true
+            "projectName": "shortest-path-graph"
         }
     ]
 }
