@@ -4,7 +4,9 @@
 
 class DijkstrasAlgorithm {
 
-    /**
+    private String matrizResultado = "";
+
+	/**
      * Calcula a distancia entre todos os pares de uma matriz de adjacencias
      * 
      * @param graph A matriz de adjacencias
@@ -91,7 +93,12 @@ class DijkstrasAlgorithm {
         System.out.print(srcVertex);
         for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {
             System.out.print("\t" + distances[vertexIndex]);
+            matrizResultado += "\t" + distances[vertexIndex];
         }
         System.out.println();
     }
+
+	public String getMatriz() {
+		return matrizResultado;
+	}
 }
