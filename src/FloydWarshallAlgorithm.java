@@ -3,6 +3,7 @@
  */
 class FloydWarshallAlgorithm {
     final static int INF = Integer.MAX_VALUE;
+    private String matrizRetorno = "";
 
     /**
      * Executa o algoritmo de Floyd-Warshall e imprime a matriz de caminho mais
@@ -50,13 +51,21 @@ class FloydWarshallAlgorithm {
         for (int i = 0; i < V; ++i) {
             System.out.print(i + "\t");
             for (int j = 0; j < V; ++j) {
-                if (dist[i][j] == INF)
+                if (dist[i][j] == INF) {
                     System.out.print("INF\t");
-                else
+                    matrizRetorno += "\tINF" ;
+                }
+                else {
                     System.out.print(dist[i][j] + "\t");
+                    matrizRetorno += "\t" + dist[i][j];
+                }
             }
             System.out.println();
         }
         System.out.println();
     }
+
+	public String getMatriz() {
+		return matrizRetorno;
+	}
 }

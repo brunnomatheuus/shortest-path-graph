@@ -8,7 +8,7 @@ public class TesteCorretude {
     private static final int INF = Integer.MAX_VALUE;
 
 	@Test
-    public void verificaMatriz() {    
+    public void verificaMatrizDijkstra() {    
     	int graph[][] = {
     			{0, 2, INF},
     			{2, 0, 4},
@@ -23,5 +23,23 @@ public class TesteCorretude {
         
     	System.out.println(d.getMatriz());
     	assertEquals(resultadoEsperado, d.getMatriz());
+    }
+	
+	@Test
+    public void verificaMatrizFloyd() {    
+    	int graph[][] = {
+    			{0, 2, INF},
+    			{2, 0, 4},
+    			{INF, 4, 0}
+    	};
+
+        FloydWarshallAlgorithm f = new FloydWarshallAlgorithm();
+        
+        String resultadoEsperado = "\t0\t2\t6\t2\t0\t4\t6\t4\t0";
+        		
+        f.floydWarshall(graph, true);
+        
+    	System.out.println(f.getMatriz());
+    	assertEquals(resultadoEsperado, f.getMatriz());
     }
 }
