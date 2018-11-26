@@ -13,8 +13,11 @@ class CaminhoMaisCurto {
      * @param args Argumentos da linha de comando
      */
     public static void main(String[] args) {
+        String caminho = "./results/grafosunico.txt";
         Calculos calculos = new Calculos();
-        if (calculos.calcUnico("./results/grafosunico.txt", false, DIMENSAO, false))
+        Arquivo arq = new Arquivo();
+        arq.salvar(caminho, true, "Dimensao;Geracao;Dijkstra;Floyd");
+        if (calculos.calcUnico(caminho, false, DIMENSAO, false))
             System.out.println("***FIM ÚNICO***");
         else
             System.out.println("***ERRO ÚNICO***");

@@ -35,11 +35,11 @@ class Calculos {
         f.floydWarshall(graph, ver);
         long tfinal2 = System.nanoTime();
 
-        // Acrescenta o resultado no arquivo. Com tempos em nano segundos.
+        // Acrescenta o resultado no arquivo. Com tempos em micro segundos.
         // Leiaute: dimensão; tempo de geração; tempo Dijkstra; tempo Floyd-Warshall
         Arquivo arquivo = new Arquivo();
-        return arquivo.salvar(caminho, limpar, dimensao + ";" + (tfinal0 - tinicial0) + ";" + (tfinal1 - tinicial1)
-                + ";" + (tfinal2 - tinicial2) + ";");
+        return arquivo.salvar(caminho, limpar, dimensao + ";" + (tfinal0 - tinicial0) / 1000 + ";"
+                + (tfinal1 - tinicial1) / 1000 + ";" + (tfinal2 - tinicial2) / 1000 + ";");
     }
 
     /**
@@ -66,15 +66,15 @@ class Calculos {
         }
 
         System.out.print("Iniciando loops: ");
+        Arquivo arq = new Arquivo();
+        arq.salvar(caminho, true, "Dimensao;Geracao;Dijkstra;Floyd");
         ProgressBar pb = new ProgressBar();
         long total = dimensaoMax - dimensaoMin;
         long startTime = System.currentTimeMillis();
         for (int i = dimensaoMin; i <= dimensaoMax; i++) {
             pb.printProgress(startTime, total, i - dimensaoMin);
             for (int j = 0; j < qtdLoops; j++) {
-                if (i > dimensaoMin || j > 0)
-                    limpar = false;
-                if (!calcUnico(caminho, limpar, i, ver)) {
+                if (!calcUnico(caminho, false, i, ver)) {
                     System.out.println("Matriz " + i + "x" + i + " inválida!");
                 }
             }
