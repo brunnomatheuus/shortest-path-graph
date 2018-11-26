@@ -3,7 +3,7 @@
  */
 class Matriz {
 
-    private final int INF = Integer.MAX_VALUE;
+    private static final int INF = Integer.MAX_VALUE;
 
     /**
      * Gera uma matriz de adjacencias randomica.
@@ -12,7 +12,7 @@ class Matriz {
      * @param print    Booleano para indicar se deseja imprimir o resultado
      * @return A matriz gerada
      */
-    public int[][] geraMatriz(int dimensao, Boolean print) {
+    public static int[][] geraMatriz(int dimensao, Boolean print) {
         int graph[][] = new int[dimensao][dimensao];
         for (int i = 0; i < dimensao; i++) {
             for (int j = 0; j < dimensao; j++) {
@@ -60,12 +60,29 @@ class Matriz {
     }
 
     /**
+     * Compara duas matrizes.
+     * 
+     * @param matrix1 Uma das matrizes a comparar
+     * @param matrix2 Uma das matrizes a comparar
+     * @return Retorna true quando as duas sao iguais.
+     */
+    public static boolean compareMatrix(int matrix1[][], int matrix2[][]) {
+        for (int i = 0; i < matrix1[0].length; i++) {
+            for (int j = 0; j < matrix1[0].length; j++) {
+                if (matrix1[i][j] != matrix2[i][j])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * Imprime a matrix informada
      * 
      * @param graph    A matriz a ser impressa
      * @param dimensao A dimensao da matriz
      */
-    public void printMatrix(int graph[][]) {
+    public static void printMatrix(int graph[][]) {
         int dimensao = graph[0].length;
         System.out.println("Matrix:");
         for (int i = 0; i < dimensao; ++i) {

@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "shortest-path-graph",
+                "projectName": "shortest-path-graph",
+                "workingDirectory": "/home/dionisio/eclipse-workspace-ufrn/shortest-path-graph",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "shortest-path-graph",
+                "projectName": "shortest-path-graph",
+                "workingDirectory": "/home/dionisio/eclipse-workspace-ufrn/shortest-path-graph",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

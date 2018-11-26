@@ -11,8 +11,9 @@ class FloydWarshallAlgorithm {
      * 
      * @param graph A matriz de adjacencias
      * @param print Booleano para indicar se deseja imprimir o resultado
+     * @return Retorna a matriz de caminhos mais curtos
      */
-    void floydWarshall(int graph[][], Boolean print) {
+    public int[][] floydWarshall(int graph[][], Boolean print) {
         final int V = graph[0].length;
         int dist[][] = new int[V][V];
         int i, j, k;
@@ -32,6 +33,7 @@ class FloydWarshallAlgorithm {
         }
         if (print)
             printSolution(dist, V);
+        return dist;
     }
 
     /**
@@ -53,9 +55,8 @@ class FloydWarshallAlgorithm {
             for (int j = 0; j < V; ++j) {
                 if (dist[i][j] == INF) {
                     System.out.print("INF\t");
-                    matrizRetorno += "\tINF" ;
-                }
-                else {
+                    matrizRetorno += "\tINF";
+                } else {
                     System.out.print(dist[i][j] + "\t");
                     matrizRetorno += "\t" + dist[i][j];
                 }
@@ -65,7 +66,7 @@ class FloydWarshallAlgorithm {
         System.out.println();
     }
 
-	public String getMatriz() {
-		return matrizRetorno;
-	}
+    public String getMatriz() {
+        return matrizRetorno;
+    }
 }
