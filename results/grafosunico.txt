@@ -1,2 +1,2 @@
 Dimensao;Geracao;Dijkstra;Floyd
-100;14243;8410;2982;
+100;3807;7677;4550;
